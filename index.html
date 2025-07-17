@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Doctor Chatbot</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>AI Doctor Chatbot</h1>
+        <div class="controls">
+          <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+          <select id="language-select">
+            <option value="auto">Auto</option>
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="ru">Русский</option>
+          </select>
+        </div>
+      </div>
+      <div class="chat-container" id="chat-box">
+        <!-- Messages will appear here -->
+      </div>
+      <div class="input-area">
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Describe your symptoms..."
+          autocomplete="off"
+        />
+        <button id="send-btn">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+      <div class="disclaimer">
+        <p>
+          <strong>Disclaimer:</strong> This is for informational purposes only
+          and not a substitute for professional medical advice.
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

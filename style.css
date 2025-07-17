@@ -1,0 +1,258 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --primary-color: #4caf50;
+  --secondary-color: #f1f1f1;
+  --user-message-bg: #e3f2fd;
+  --bot-message-bg: #f1f1f1;
+  --input-bg: #ffffff;
+  --input-border: #dddddd;
+  --container-bg: #ffffff;
+  --container-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #4caf50;
+  --secondary-color: #1e1e1e;
+  --user-message-bg: #2d3a4b;
+  --bot-message-bg: #1e1e1e;
+  --input-bg: #2d2d2d;
+  --input-border: #444444;
+  --container-bg: #1e1e1e;
+  --container-shadow: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--container-bg);
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--container-shadow);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#dark-mode-toggle,
+#language-select {
+  background: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#dark-mode-toggle {
+  font-size: 1rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#language-select {
+  font-size: 14px;
+}
+
+.chat-container {
+  height: 500px;
+  overflow-y: auto;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: var(--secondary-color);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.message {
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  max-width: 85%;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.3s forwards;
+}
+
+[dir="rtl"] .message {
+  text-align: right;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-message {
+  background-color: var(--user-message-bg);
+  margin-left: auto;
+  text-align: left;
+}
+
+.bot-message {
+  background-color: var(--bot-message-bg);
+  margin-right: auto;
+  text-align: left;
+}
+
+.bot-message h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.bot-message p {
+  margin-top: 0;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.bot-message ul,
+.bot-message ol {
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.bot-message li {
+  margin-bottom: 8px;
+}
+
+.warning {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.typing {
+  display: inline-block;
+}
+
+.typing-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  margin-right: 4px;
+  animation: typingAnimation 1.4s infinite both;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid var(--input-border);
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+#send-btn {
+  padding: 0 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#send-btn:hover {
+  background-color: #45a049;
+}
+
+.disclaimer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--text-color);
+  text-align: center;
+  opacity: 0.7;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background-color: var(--primary-color);
+  animation: blink 1s infinite;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
