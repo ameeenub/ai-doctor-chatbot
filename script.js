@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const darkModeToggle = document.getElementById("dark-mode-toggle");
 
   // Configuration
-  const DEEPSEEK_API_KEY = "sk-8dde26d39e724c609d1aa2919a1da700"; // REPLACE WITH YOUR ACTUAL API KEY
+  const DEEPSEEK_API_KEY = "sk-a190f20acd4e4290a05a212a458c6f25"; // REPLACE WITH YOUR ACTUAL API KEY
   const DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions";
 
   // Check for saved theme preference
